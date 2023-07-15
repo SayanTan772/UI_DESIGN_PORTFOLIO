@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Codepen</title>
+</head>
+<body>
+    <div class="main">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="zoomable-wrapper">
+            <div class="img-container">
+                <img src="./media/fashionable-young-woman-standing-front-blue-backdrop.jpg">
+                
+                <h1 id="heading-large" class="hover-el">PORTFOLIO</h1>
+                <div class="btn-div hover-el"><button>Go to Designs <i class="fa-solid fa-arrow-right"></i></button></div>
+            </div>
+            <h1 id="heading-small" class="hover-el">TAKE A LOOK AT MY DESIGNS</h1>
+            <h1 id="heading-small" class="hover-el">TAKE A LOOK AT MY DESIGNS</h1>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const body = document.querySelector(".main");
+
+        const button = document.querySelector(".hover-el button");
+
+        button.addEventListener("click", () => {
+            body.style.transform = "scale(1)";
+        });
+
+        window.addEventListener("wheel", event => {
+            const scrollDelta = event.deltaY;
+
+            if (scrollDelta < 0) {
+                // Scroll up
+                body.style.transform = "scale(2.35)";
+            }
+        });
+    </script>
+</body>
+</html>
